@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stp2json</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=python&amp;skin=sons-of-obsidian"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+        body{
+            font-family: 'Roboto Slab', serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin: 2% 20% 5% 20%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            var base_url = document.URL;
+            api_url = base_url+'stp2json/yourFilename'
+            document.getElementById("api-url").innerHTML = api_url;
+
+        }
+        </script>
+    <div class="container">
+        <div>
+            <h2>Python Code:</h2>
+<?prettify linenums=1?>
+<pre class="prettyprint">
+import requests 
+
+API_URL= apiUrl
+
+filePath = yourFilePath
+
+# Get the file name
+filename = filePath.split('/')[1]
+
+# Read file content
+with open(filePath) as stpFile:
+    data = stpFile.read()
+
+# Finaly Make a POST request
+res = requests.post(f'{API_URL}/{filename}', data=data)
+
+if res.status_code == 200:
+    stp_as_json = res.json()
+</pre>
+        </div>
+
+        <div class="">
+            <h2>PHP Code:</h2>
+<?prettify linenums=1?>
+<pre class="prettyprint">
+function callAPI($method, $url, $data){
+    $curl = curl_init();
+    switch ($method){
+    case "POST":
+        curl_setopt($curl, CURLOPT_POST, 1);
+        if ($data)
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        break;
+    case "PUT":
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+        if ($data)
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
+        break;
+    default:
+        if ($data)
+            $url = sprintf("%s?%s", $url, http_build_query($data));
+    }
+    // OPTIONS:
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    ));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    // EXECUTE:
+    $result = curl_exec($curl);
+    if(!$result){die("Connection Failure");}
+    curl_close($curl);
+    return $result;
+}
+
+# our API URL
+$api_url = apiURL;
+# Get filePath from user input
+$filePath = yourFilePath;
+
+# Get the file name
+$dict_path = explode("/", $filePath);
+$filename = end($dict_path);
+# Read file content
+$data = file_get_contents($filePath);
+# Finaly Make a POST request
+$make_call = callAPI('POST', $api_url.$filename, $data);
+
+$response = json_decode($make_call, true);
+
+echo json_encode($response);
+</pre>
+        </div>
+    </div>
+    
+</body>
+</html>

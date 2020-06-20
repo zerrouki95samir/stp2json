@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stp2json</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+        body{
+            font-family: 'Roboto Slab', serif;
+            margin: 0;
+            padding: 0;
+        }
+        strong{
+            color:blue
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            var base_url = document.URL;
+            api_url = base_url+'stp2json/yourFilename'
+            document.getElementById("api-url").innerHTML = api_url;
+
+        }
+        </script>
+    <div style="margin-left:10%; margin-right:10%; margin-top:3%">
+        <h1 style="color:red;text-align:center;">Simple Explaination</h1>
+        <hr>
+        
+        <h3>This is flask API to convert the stp/step 3D-Cad file to json object.</h3>
+        <h3>You can just make a post requests with your stp/step file data to this url: <strong id="api-url"></strong></h3>
+        <h4><a href="/stp2json">Click Here to see a python/php sample code</a></h4>
+        
+        
+        <h2>Notes:</h2>
+        <div style="margin-left:20px; margin-right:10px;">
+                <ul>
+                    <h4><li>The file data must be a stp/step file.</li></h4>
+                    <h4><li>The requested data will not be saved on the server.</li></h4>
+                    <h4><li>The filename param (in the url) it must contain a .stp at the end of it!</li></h4>
+                </ul>
+        </div>
+        
+    </div>
+</body>
+</html>
