@@ -115,4 +115,4 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Author
 
-* **ZERROUKI SAMIR** - *Initial work* - [zerrouki95samir](https://github.com/zerrouki95samir)
+* **ZERROUKI SAMIR** - [zerrouki95samir](https://github.com/zerrouki95samir)
