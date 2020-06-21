@@ -53,17 +53,17 @@ Running on http://0.0.0.0:33508/ (Press CTRL+C to quit)
 ## Running the tests
 
 Now that our server is up and running, we need to do some testing, so we need to send a POST requests with stp/step file data, I've already prepared some code with php-curl or python-requests  module, you can just open the [base url](http://localhost:33508/) that appeared when the server ran or you can simply click here: [http://localhost:33508/](http://localhost:33508/) 
-And the [Simple Explanation](http://localhost:33508/) the first paragraph
+And read the [Simple Explanation](http://localhost:33508/) that explains how to send a POST request to the API-server.
 
 ### Break down into end to end tests
 
-If you [read](https://stp2jsonv2.herokuapp.com/) and test the API server using the [python/php-Curl codes template](https://stp2jsonv2.herokuapp.com/stp2json) I have provided for you to do a POST Request, you will get a successful response as a json object
+If you [read](https://stp2jsonv2.herokuapp.com/) and test the API server using the [python/php-Curl codes template](https://stp2jsonv2.herokuapp.com/stp2json) (don't forget to set your stp/step filePath and the apiUrl on the templates code as mentioned [Here](https://stp2jsonv2.herokuapp.com/)) I have provided for you to do a POST Request, you will get a successful response as a json object
 
 
 ## Deployment
 
 Now!, Let's talk about the deployment, i already deployed this flask-api on [my heroku server](https://stp2jsonv2.herokuapp.com/), using the Dockerfile located in main directory, 
-you need to have [heroku cli](https://devcenter.heroku.com/articles/heroku-cli) and [Docker](https://docs.docker.com/desktop/) installed on your machine.
+you need to have [heroku cli](https://devcenter.heroku.com/articles/heroku-cli) and [Docker](https://docs.docker.com/desktop/) pre-installed on your machine.
 After you install the CLI, run the heroku login command. You’ll be prompted to enter any key to go to your web browser to complete login. 
 The CLI will then log you in automatically.
 
