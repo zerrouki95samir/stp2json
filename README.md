@@ -20,7 +20,7 @@ Clone this Repository on your machine, on your terminal/cmd.. :
 ```
 git clone https://github.com/zerrouki95samir/stp2json.git
 ```
-cd to stp2json folder:
+cd to stp2json directory:
 
 ```
 cd stp2json
