@@ -1,0 +1,9 @@
+name: stp2json
+channels:
+  - dlr-sc
+dependencies:
+  - flask=1.1.2=py_0
+  - pip=20.1.1=py37_1
+  - python=3.7.7=h81c818b_4
+  - pythonocc-core=7.4.0=py37he980bc4_0
+
