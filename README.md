@@ -15,7 +15,7 @@ Or if you want to just deploy it on a server jump to [Deployment](#deployment) s
 
 After installing anaconda (comes with python3.* pre-installed), you can follow this steps:
 
-Clone this Repository on your machine, open your terminal/cmd.. and type:
+Clone this Repository on your machine, on your terminal/cmd.. :
 
 ```
 git clone https://github.com/zerrouki95samir/stp2json.git
